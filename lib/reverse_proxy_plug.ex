@@ -149,7 +149,7 @@ defmodule ReverseProxyPlug do
 
     conn
     |> Conn.prepend_resp_headers(resp_headers)
-    |> Conn.resp(status, body)
+    |> Conn.send_resp(status, body)
   end
 
   @spec stream_response(Conn.t(), Keyword.t()) :: Conn.t()
